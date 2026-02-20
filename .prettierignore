@@ -1,0 +1,13 @@
+pnpm-lock.yaml
+**/.husky/_/
+**/tmp/
+**/dist/
+**/out/
+**/build/
+**/.cache
+**/.vercel/
+
+# Work-in-progress directories and generated files
+**/wip/
+**/wip-*/
+**/*.gen.ts

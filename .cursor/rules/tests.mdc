@@ -1,0 +1,70 @@
+---
+globs: '**/*.test.ts'
+description: Test conventions and consistency guidelines
+---
+
+## Function Testing
+
+When testing specific functions, include the function name in the test description.
+
+Exceptions:
+
+1. Use `btca` skill whenever possible to check `vitest` and `jest-extended` matchers
+2. Use `toStrictEqual` whenever possible
+3. If the function name is already present in a parent `describe` block, do not repeat the function name in each `it` title.
+4. If the test file is dedicated to testing a single method (eg. `get-js-object.test.ts` testing only `getJsObject`), you do not need to:
+   - Use `describe` blocks (the file name already provides context)
+   - Include the function name in each test description (it's implied by the file name)
+
+```ts
+// Good: Clear which function is being tested (when testing multiple functions)
+it('should throw error when archiveMessage message Id is not found', async function () {
+  // test implementation
+});
+
+// Good: In a file dedicated to testing getJsObject (get-js-object.test.ts)
+it('should retrieve uploaded JSON object', async function () {
+  // test implementation - function name not needed, file name implies it
+});
+
+// Bad: Vague, doesn't specify the function (when testing multiple functions)
+it('should throw error for invalid message Id in archive', async function () {
+  // test implementation
+});
+```
+
+## Action Verbs
+
+Use consistent, descriptive action verbs. Prefer specificity over vague terms like "handle".
+
+- `verify` instead of `check` (eg. "should verify queue exists")
+- `retrieve` instead of `get` (eg. "should retrieve queue details")
+- `update` instead of `change` (eg. "should update message visibility timeout")
+- `generate` for code generation/output cases (eg. "should generate types for complex objects")
+
+## Error Testing
+
+For error conditions, use clear, specific language:
+
+```ts
+// Good: Specific about the condition
+it('should throw error when changeMessageVisibilityTimeout message Id is not found', async function () {
+  // test implementation
+});
+
+// Good: Clear about the invalid input
+it('should throw error for invalid queue name', async function () {
+  // test implementation
+});
+```
+
+## Success Cases
+
+For successful operations, focus on the action being performed:
+
+```ts
+// Good: Clear action
+it('should send message with headers', async function () {
+  // test implementation
+});
+```

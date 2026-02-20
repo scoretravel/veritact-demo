@@ -1,0 +1,49 @@
+# Keys
+*.pem
+*.env.*
+!*.env
+*.aws
+*.crt
+*.key
+
+# Build
+**/.vercel/
+**/dist/
+**/build/
+**/output/
+**/tmp/
+**/node_modules/
+**/coverage/
+**/.pnpm-store/
+**/.tsbuildinfo
+**/package-lock.json
+**/.cache
+**/.fixtures
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDEs
+.idea/
+*.iml
+.vscode/backup-*/
+
+# btca local data
+.btca/
+
+# Work-in-progress directories and generated files
+**/wip/
+**/wip-*/
+**/*.gen.ts

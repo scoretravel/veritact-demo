@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+- Always use `pnpm` as the package manager, not npm (or yarn)
+- Suggest solutions that I didn't think about — anticipate my needs
+- Treat me as an expert
+- Consider new technologies and contrarian ideas, not just the conventional wisdom
+- Be accurate and thorough. Always triple-check every piece of code to make sure it's consistent with the existing codebase
+- Never use arrow functions unless absolutely necessary
+- Always use `const functionName = function() {}` pattern for function declarations, never use `function functionName() {}`
+- All functions must have JSDoc-style comments above them that describe what the function does
+- Function comments should use present tense verbs (eg. "Get the value" not "Gets the value")
+- For naming conventions, use Id instead of ID
+- Prefer type inference over explicit type definitions. Let TypeScript infer types from function parameters and return values rather than creating separate type aliases for intermediate values

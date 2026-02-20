@@ -1,0 +1,9 @@
+---
+globs: '**/README.md'
+---
+
+- Use `https://example.com` for placeholder URLs (content URLs, callback URLs, webhook URLs)
+- Use `dummy-token` for placeholder tokens (apiToken)
+- Optional params with defaults: `// name?: type (default: value)` as comment, or inline `value, // (default: value)` when the param is shown
+- Optional params without defaults: `// name?: type` (omit the default portion). Prefer this over `// (optional)`
+- Omit documentation for APIs that are broken or non-functional
