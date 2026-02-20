@@ -1,7 +1,7 @@
-import { LandingHero } from '@/components/landing-hero';
+import { LandingPage } from '@/components/landing-page';
 
 export function App() {
-  return <LandingHero />;
+  return <LandingPage />;
 }
 
 export default App;
