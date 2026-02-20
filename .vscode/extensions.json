@@ -1,0 +1,69 @@
+{
+  "recommendations": [
+    // HTTP client
+    "anweber.vscode-httpyac",
+
+    // Databases
+    "mtxr.sqltools", // SQL tools
+    "mongodb.mongodb-vscode", // MongoDB
+    "qwtel.sqlite-viewer", // SQLite viewer
+
+    // Docker & terminal tools
+    "ms-azuretools.vscode-docker", // Docker management and container orchestration
+
+    // Intellisense
+    "VisualStudioExptTeam.vscodeintellicode",
+    "christian-kohler.path-intellisense", // JS/TS autocomplete for file paths
+
+    // Quality of life improvements
+    "dzhavat.bracket-pair-toggler", // Bracket pair colorizer
+    "formulahendry.auto-close-tag",
+    "streetsidesoftware.code-spell-checker", // Spell checker
+
+    // Git tools
+    "eamodio.gitlens", // Git insights for better version control
+
+    // Code formatting
+    "esbenp.prettier-vscode", // Code formatting with Prettier for consistent style
+    "charliermarsh.ruff", // Python formatting
+    "tamasfe.even-better-toml", // TOML support for Poetry
+    "hashicorp.hcl", // HCL files
+    "hashicorp.terraform", // Terraform files
+    "redhat.vscode-yaml", // YAML support
+    "aaron-bond.better-comments",
+    "Ariga.atlas-hcl", // Atlasgo HCL files
+
+    // Error & warning display
+    "usernamehw.errorlens", // Inline highlights for errors and warnings
+    "YoavBls.pretty-ts-errors", // Better TS errors
+
+    // Markdown
+    "yzhang.markdown-all-in-one", // Enhanced Markdown editing and shortcuts
+    "bierner.markdown-mermaid", // Mermaid diagram support in Markdown
+
+    // HTML/CSS
+    "ecmel.vscode-html-css",
+
+    // Linting and TypeScript
+    "dbaeumer.vscode-eslint", // JS/TS linting support
+    "vitest.explorer",
+
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.gather",
+    "ms-toolsai.jupyter",
+    "ms-python.debugpy",
+
+    // Continuous integration
+    "github.vscode-github-actions", // GitHub Actions support
+
+    // Data science & file viewers
+    "ms-toolsai.datawrangler",
+    "dvirtz.parquet-viewer"
+
+    // @deprecated
+    // "foxundermoon.shell-format", // Formatting support for ignore files
+    // "ms-vscode.vscode-typescript-next", // Latest TS features
+  ]
+}

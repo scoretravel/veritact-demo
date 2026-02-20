@@ -8,12 +8,6 @@
 6. [Path Aliases](https://react.dev/learn/importing-files) - Imports using `@/` (eg. `import { Button } from "@/components/ui/button"`)
 7. [ESLint](https://eslint.org)
 
-## Tooling
-
-- [TSX TypeScript runtime](https://github.com/privatenumber/ts-runtime-comparison) is used
-
-> Tooling for MacOS/Linux: https://github.com/scoretravel/infra?#tooling
-
 ## Development
 
 > [!TIP]
@@ -29,38 +23,13 @@
 > $ op run --env-file=.env --no-masking -- pnpm [command]
 > ```
 
-> [!NOTE]
-> Check in fixtures using `git lfs`
->
-> ```shell
-> $ git lfs track "**/fixtures/*.json"
-> $ git add "**/fixtures/*.json"
-> ```
->
-> Check which files are actually tracked by Git LFS `$ git lfs ls-files`
->
-> Push all the LFS files to origin `$ git lfs push --all origin`
-
 ```shell
 # Install dependencies
 $ pnpm install
 
 # Start the local server (after loading env vars via 1password)
 # No masking enables logging of sensitive data
-$ op run --env-file=.env --env-file=.env.local --no-masking -- pnpm run dev
-$ op run --env-file=.env --env-file=.env.local --no-masking -- pnpm run dev:no-watch
-```
-
-```shell
-# Run tests
-$ op run --env-file=.env --env-file=.env.local -- pnpm run test
-$ op run --env-file=.env --env-file=.env.local --no-masking -- pnpm run test:watch
-
-# To run tests for a specific directory
-$ op run --env-file=.env --env-file=.env.local --no-masking -- pnpm run test:watch --dir=src/routes/datalake/vendors/tripadvisor
-
-# Clean test recordings
-$ pnpm run clean:recordings
+$ op run --env-file=.env --no-masking -- pnpm run dev
 ```
 
 ```shell
@@ -79,18 +48,8 @@ $ pnpm update --latest -i
 
 ### Adding Components
 
-This template is configured with `components.json`. You can add Shadcn components using the CLI:
+Add Shadcn components to `components.json` using the CLI:
 
-```bash
-npx shadcn@latest add button
-```
-
-or if you have pnpm:
-
-```bash
+```shell
 pnpm dlx shadcn@latest add button
 ```
-
-### React Compiler
-
-The `babel-plugin-react-compiler` is enabled by default in `vite.config.ts`. You don't need to do anything extra; just write standard React code and let the compiler handle memoization!
