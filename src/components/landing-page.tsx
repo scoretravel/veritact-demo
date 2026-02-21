@@ -18,7 +18,7 @@ const DottedLeader = function ({ label, status }: { label: string; status: strin
       <span className="text-primary font-normal">{status}</span>
     </div>
   );
-}
+};
 
 export const LandingPage = function () {
   return (
@@ -122,4 +122,4 @@ export const LandingPage = function () {
       </div>
     </div>
   );
-}
+};

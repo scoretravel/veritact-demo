@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -219,7 +219,9 @@ export const PreparationPanel = function () {
             className={`text-sm font-medium block ${isChecked ? 'text-gray-800' : 'text-gray-500'} transition-colors`}>
             {item.name}
           </span>
-          <span className="text-[11px] text-gray-400 leading-relaxed block">{item.description}</span>
+          <span className="text-[11px] text-gray-400 leading-relaxed block">
+            {item.description}
+          </span>
         </div>
       </div>
     );
@@ -333,8 +335,7 @@ export const PreparationPanel = function () {
         <Button
           className="h-11 w-full gap-2 rounded-lg text-sm font-normal cursor-pointer"
           style={{
-            boxShadow:
-              '0 0 15px oklch(0.52 0.15 210 / 20%), 0 0 30px oklch(0.52 0.15 210 / 8%)',
+            boxShadow: '0 0 15px oklch(0.52 0.15 210 / 20%), 0 0 30px oklch(0.52 0.15 210 / 8%)',
           }}
           render={<Link to="/step-5/installation" />}>
           Begin Installation <span className="text-primary-foreground/70">&rarr;</span>

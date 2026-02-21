@@ -135,9 +135,7 @@ export const VerificationPanel = function () {
                   Total Duration
                 </span>
               </div>
-              <span className="text-2xl font-mono font-semibold text-gray-900">
-                00:45:12
-              </span>
+              <span className="text-2xl font-mono font-semibold text-gray-900">00:45:12</span>
             </div>
 
             {/* Points Checked */}
@@ -164,7 +162,8 @@ export const VerificationPanel = function () {
                   {checkedCount}
                 </span>
                 <span className="text-2xl font-mono font-semibold text-gray-400">
-                  {' '}/ {checklistItems.length}
+                  {' '}
+                  / {checklistItems.length}
                 </span>
               </div>
             </div>
@@ -206,9 +205,7 @@ export const VerificationPanel = function () {
               <span className="font-mono text-[11px] tracking-widest text-gray-500 uppercase font-semibold">
                 Final Verification
               </span>
-              <span className="text-sm text-primary">
-                {pendingCount} Pending
-              </span>
+              <span className="text-sm text-primary">{pendingCount} Pending</span>
             </div>
             <div className="space-y-2.5">
               {checklistItems.map(function (item) {
@@ -220,11 +217,7 @@ export const VerificationPanel = function () {
                         ? 'border-emerald-300 bg-emerald-50'
                         : 'border-gray-200 bg-gray-50'
                     }`}>
-                    <Checkbox
-                      checked={item.checked}
-                      className="shrink-0 mt-0.5"
-                      disabled
-                    />
+                    <Checkbox checked={item.checked} className="shrink-0 mt-0.5" disabled />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span
