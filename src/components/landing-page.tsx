@@ -13,8 +13,8 @@ const systemStatus = [
 const DottedLeader = function ({ label, status }: { label: string; status: string }) {
   return (
     <div className="flex justify-between gap-2 font-mono text-xs sm:text-sm">
-      <span className="text-gray-400">{label}</span>
-      <span className="flex-1 border-b border-dotted border-gray-200 translate-y-[-4px]" />
+      <span className="text-white/40">{label}</span>
+      <span className="flex-1 border-b border-dotted border-white/10 translate-y-[-4px]" />
       <span className="text-primary font-normal">{status}</span>
     </div>
   );
@@ -22,7 +22,7 @@ const DottedLeader = function ({ label, status }: { label: string; status: strin
 
 export const LandingPage = function () {
   return (
-    <div className="relative min-h-screen bg-gray-50 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[oklch(0.08_0.01_240)] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
       {/* Animated grid background */}
       <div
         className="animate-grid-scroll pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -34,7 +34,7 @@ export const LandingPage = function () {
 
       {/* Main card */}
       <div
-        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-primary/10 bg-white"
+        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-primary/10 bg-[oklch(0.1_0.01_240)]"
         style={{
           boxShadow: '0 0 40px oklch(0.52 0.15 210 / 8%), inset 0 1px 0 oklch(0.52 0.15 210 / 6%)',
         }}>
