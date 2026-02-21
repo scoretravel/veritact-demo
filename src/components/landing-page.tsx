@@ -1,5 +1,6 @@
 import { CircleArrowRightIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 
 const systemStatus = [
@@ -113,7 +114,8 @@ export function LandingPage() {
               className="h-14 gap-3 rounded-xl px-7 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/85 cursor-pointer"
               style={{
                 boxShadow: '0 0 20px oklch(0.7 0.15 200 / 40%), 0 0 40px oklch(0.7 0.15 200 / 15%)',
-              }}>
+              }}
+              render={<Link to="/identify" />}>
               Begin Installation
               <HugeiconsIcon icon={CircleArrowRightIcon} size={20} strokeWidth={3} />
             </Button>

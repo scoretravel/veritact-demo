@@ -183,3 +183,19 @@
 .animate-grid-scroll {
   animation: grid-scroll 3s linear infinite;
 }
+
+@keyframes bracket-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    border-color: oklch(0.7 0.15 200 / 60%);
+  }
+  50% {
+    opacity: 1;
+    border-color: oklch(0.8 0.18 200 / 90%);
+  }
+}
+
+.animate-bracket-pulse {
+  animation: bracket-pulse 2s ease-in-out infinite;
+}
