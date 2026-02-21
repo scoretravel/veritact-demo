@@ -175,11 +175,11 @@
   0%,
   100% {
     opacity: 0.6;
-    border-color: oklch(0.7 0.15 200 / 60%);
+    border-color: oklch(0.52 0.15 210 / 40%);
   }
   50% {
     opacity: 1;
-    border-color: oklch(0.8 0.18 200 / 90%);
+    border-color: oklch(0.52 0.15 210 / 70%);
   }
 }
 

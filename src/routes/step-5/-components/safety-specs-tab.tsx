@@ -27,7 +27,7 @@ export const SafetySpecsTab = function () {
       <div className="space-y-6 p-4">
         {/* Safety checklist (read-only) */}
         <div className="space-y-3">
-          <span className="font-mono text-[10px] tracking-widest text-white/50 uppercase">
+          <span className="font-mono text-[10px] tracking-widest text-gray-500 uppercase">
             Safety Checklist
           </span>
           <div className="space-y-1.5">
@@ -35,7 +35,7 @@ export const SafetySpecsTab = function () {
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-2.5 rounded-md border border-[#3ce06f]/10 bg-[#3ce06f]/5 px-3 py-2">
+                  className="flex items-center gap-2.5 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -44,10 +44,10 @@ export const SafetySpecsTab = function () {
                     strokeWidth="3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-3.5 h-3.5 text-[#3ce06f] shrink-0">
+                    className="w-3.5 h-3.5 text-emerald-600 shrink-0">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span className="text-sm text-white/60">{item}</span>
+                  <span className="text-sm text-gray-500">{item}</span>
                 </div>
               );
             })}
@@ -56,19 +56,19 @@ export const SafetySpecsTab = function () {
 
         {/* Full specifications */}
         <div className="space-y-3">
-          <span className="font-mono text-[10px] tracking-widest text-white/50 uppercase">
+          <span className="font-mono text-[10px] tracking-widest text-gray-500 uppercase">
             Full Specifications
           </span>
-          <div className="rounded-lg border border-white/5 overflow-hidden">
+          <div className="rounded-lg border border-gray-200 overflow-hidden">
             {specs.map(function (spec, i) {
               return (
                 <div
                   key={spec.label}
                   className={`flex items-center justify-between px-3 py-2.5 ${
-                    i % 2 === 0 ? 'bg-[oklch(0.08_0.01_240)]' : 'bg-transparent'
+                    i % 2 === 0 ? 'bg-gray-50' : 'bg-transparent'
                   }`}>
-                  <span className="font-mono text-[11px] text-white/40">{spec.label}</span>
-                  <span className="text-sm text-white/70">{spec.value}</span>
+                  <span className="font-mono text-[11px] text-gray-400">{spec.label}</span>
+                  <span className="text-sm text-gray-700">{spec.value}</span>
                 </div>
               );
             })}
@@ -77,7 +77,7 @@ export const SafetySpecsTab = function () {
 
         {/* Diagram placeholders */}
         <div className="space-y-3">
-          <span className="font-mono text-[10px] tracking-widest text-white/50 uppercase">
+          <span className="font-mono text-[10px] tracking-widest text-gray-500 uppercase">
             Reference Diagrams
           </span>
           <div className="grid grid-cols-2 gap-2">
@@ -85,21 +85,21 @@ export const SafetySpecsTab = function () {
               return (
                 <div
                   key={name}
-                  className="rounded-lg border border-white/5 bg-[oklch(0.08_0.01_240)] p-4 flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-md border border-white/10 bg-white/5 flex items-center justify-center">
+                  className="rounded-lg border border-gray-200 bg-gray-50 p-4 flex flex-col items-center gap-2">
+                  <div className="w-12 h-12 rounded-md border border-gray-200 bg-gray-900/5 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
-                      className="w-6 h-6 text-white/20">
+                      className="w-6 h-6 text-gray-300">
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                       <circle cx="8.5" cy="8.5" r="1.5" />
                       <polyline points="21 15 16 10 5 21" />
                     </svg>
                   </div>
-                  <span className="font-mono text-[10px] text-white/30 tracking-wider text-center">
+                  <span className="font-mono text-[10px] text-gray-400 tracking-wider text-center">
                     {name}
                   </span>
                 </div>

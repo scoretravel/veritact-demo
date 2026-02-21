@@ -35,14 +35,14 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
   const isVerified = detectionStatus === 'verified';
   const isComplete = detectionStatus === 'complete';
 
-  const bracketBorderClass = isVerified || isComplete ? 'border-[#3ce06f]/70' : 'border-primary';
+  const bracketBorderClass = isVerified || isComplete ? 'border-emerald-400' : 'border-primary';
 
-  const connectorColorClass = isVerified || isComplete ? 'bg-[#3ce06f]/30' : 'bg-primary/40';
+  const connectorColorClass = isVerified || isComplete ? 'bg-emerald-200' : 'bg-primary/40';
 
   const statusDotColor = isComplete
-    ? 'bg-[#3ce06f]'
+    ? 'bg-emerald-500'
     : isVerified
-      ? 'bg-[#3ce06f]'
+      ? 'bg-emerald-500'
       : isScanning
         ? 'bg-primary'
         : 'bg-yellow-500';
@@ -56,7 +56,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
         : 'Initializing';
 
   return (
-    <div className="relative flex-[3] min-h-screen overflow-hidden bg-black">
+    <div className="relative flex-[3] min-h-screen overflow-hidden bg-gray-100">
       {/* Camera feed */}
       <video
         ref={videoRef}
@@ -69,22 +69,22 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
 
       {/* Top-left: REC indicator */}
       <div className="absolute top-6 left-6 z-30">
-        <div className="flex items-center gap-2 rounded-[5px] border border-blue-200/5 bg-[#171b22]/95 px-2.5 py-1 shadow-md backdrop-blur-md">
+        <div className="flex items-center gap-2 rounded-[5px] border border-gray-200 bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-md">
           <span className="h-2.5 w-2.5 rounded-full bg-red-500 animate-recording-pulse" />
           <span className="text-[12px] leading-tight font-mono font-medium tracking-wider text-red-400">
             REC
           </span>
-          <span className="text-[12px] font-mono text-white/60">{formatTime(elapsedSeconds)}</span>
+          <span className="text-[12px] font-mono text-gray-500">{formatTime(elapsedSeconds)}</span>
         </div>
       </div>
 
       {/* Top-right: Status badge */}
       <div className="absolute top-6 right-6 z-30">
-        <div className="flex items-center gap-2 rounded-[5px] border border-blue-200/5 bg-[#171b22]/95 px-2.5 py-1 shadow-md backdrop-blur-md">
+        <div className="flex items-center gap-2 rounded-[5px] border border-gray-200 bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-md">
           <span
             className={`h-2 w-2 rounded-full ${statusDotColor} transition-colors duration-300`}
           />
-          <span className="text-[12px] leading-tight font-medium tracking-wide text-slate-200">
+          <span className="text-[12px] leading-tight font-medium tracking-wide text-gray-700">
             {statusText}
           </span>
         </div>
@@ -97,7 +97,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
           {(isScanning || isVerified) && (
             <div
               className={`absolute -top-[24px] left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full px-5 py-2.5 backdrop-blur-md shadow-lg transition-colors duration-300 ${
-                isVerified ? 'bg-[#3ce06f]/90' : 'bg-[#f1f2f4]/90'
+                isVerified ? 'bg-emerald-500' : 'bg-[#f1f2f4]/90'
               }`}>
               {isVerified && (
                 <svg
@@ -122,7 +122,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
           )}
 
           {isComplete && (
-            <div className="absolute -top-[24px] left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full bg-[#3ce06f]/90 px-5 py-2.5 backdrop-blur-md shadow-lg">
+            <div className="absolute -top-[24px] left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 backdrop-blur-md shadow-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -191,7 +191,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
       </div>
 
       {/* Bottom island */}
-      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 flex items-center justify-between rounded-2xl border border-blue-200/5 bg-[#171b22]/95 px-5 py-3.5 shadow-2xl backdrop-blur-md">
+      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 flex items-center justify-between rounded-2xl border border-gray-200 bg-white/95 px-5 py-3.5 shadow-2xl backdrop-blur-md">
         <div className="flex items-center gap-2.5">
           {isScanning && (
             <svg
@@ -207,7 +207,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
             </svg>
           )}
           {(isVerified || isComplete) && (
-            <div className="flex items-center justify-center text-black bg-[#3ce06f] rounded-full h-[18px] w-[18px]">
+            <div className="flex items-center justify-center text-white bg-emerald-500 rounded-full h-[18px] w-[18px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -234,7 +234,7 @@ export const SafetyCameraView = function (props: SafetyCameraViewProps) {
               <path d="M21 12a9 9 0 1 1-6.219-8.56" />
             </svg>
           )}
-          <span className="text-[13px] font-medium tracking-wide text-white">
+          <span className="text-[13px] font-medium tracking-wide text-gray-900">
             {isComplete
               ? 'All Safety Items Verified'
               : currentItemIndex >= 0

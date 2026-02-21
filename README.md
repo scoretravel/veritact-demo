@@ -46,6 +46,15 @@ $ pnpm update -i
 $ pnpm update --latest -i
 ```
 
+```shell
+# Add coding agent skill
+# https://skills.sh/
+$ pnpm dlx skills add <repo> --skill=<skill-name>
+
+# Update agent skills
+$ pnpm dlx skills update
+```
+
 ### Adding Components
 
 Add Shadcn components to `components.json` using the CLI:

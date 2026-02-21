@@ -47,7 +47,7 @@ export const ArCameraView = function ({ currentStep, completedSteps }: ArCameraV
   const progress = `${completedSteps.length}/10`;
 
   return (
-    <div className="relative flex-[3] min-h-screen overflow-hidden bg-black">
+    <div className="relative flex-[3] min-h-screen overflow-hidden bg-gray-100">
       {/* Camera feed */}
       <video
         ref={videoRef}
@@ -60,10 +60,10 @@ export const ArCameraView = function ({ currentStep, completedSteps }: ArCameraV
 
       {/* Top-right status badges */}
       <div className="absolute top-6 right-6 z-30 flex flex-col items-end gap-2">
-        <div className="flex items-center gap-2 rounded-[5px] border border-blue-200/5 bg-[#171b22]/95 px-2.5 py-1 shadow-md backdrop-blur-md">
-          <div className="flex items-center gap-1.5 border-r border-[#30363d] pr-2.5">
+        <div className="flex items-center gap-2 rounded-[5px] border border-gray-200 bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-md">
+          <div className="flex items-center gap-1.5 border-r border-gray-200 pr-2.5">
             <span className="h-2 w-2 rounded-full bg-[#207e41] animate-pulse" />
-            <span className="text-[12px] leading-tight font-medium tracking-wide text-slate-200">
+            <span className="text-[12px] leading-tight font-medium tracking-wide text-gray-700">
               AR Active
             </span>
           </div>
@@ -131,7 +131,7 @@ export const ArCameraView = function ({ currentStep, completedSteps }: ArCameraV
       </div>
 
       {/* Bottom: Current step overlay */}
-      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 rounded-2xl border border-blue-200/5 bg-[#171b22]/95 p-4 shadow-2xl backdrop-blur-md">
+      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-2xl backdrop-blur-md">
         <div className="flex items-center gap-4">
           {/* Step number */}
           <div
@@ -145,18 +145,18 @@ export const ArCameraView = function ({ currentStep, completedSteps }: ArCameraV
           </div>
 
           <div className="flex-1 min-w-0">
-            <div className="text-white text-sm font-normal tracking-wide truncate">
+            <div className="text-gray-900 text-sm font-normal tracking-wide truncate">
               {currentStep.title}
             </div>
-            <div className="text-white/40 text-[12px] mt-0.5">
+            <div className="text-gray-400 text-[12px] mt-0.5">
               ~{currentStep.estimatedMinutes} min
             </div>
           </div>
 
           {/* Confidence badge */}
-          <div className="shrink-0 flex items-center gap-1.5 rounded-full bg-[#314a34]/80 border border-[#396e3d] px-2.5 py-1">
-            <span className="h-2 w-2 rounded-full bg-[#3ce06f]" />
-            <span className="font-mono text-[11px] text-[#3ce06f]">HIGH</span>
+          <div className="shrink-0 flex items-center gap-1.5 rounded-full bg-green-100 border border-green-300 px-2.5 py-1">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="font-mono text-[11px] text-emerald-600">HIGH</span>
           </div>
         </div>
       </div>

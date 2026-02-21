@@ -10,33 +10,33 @@ const systemStatus = [
   { label: 'Connection', status: 'SECURE' },
 ];
 
-function DottedLeader({ label, status }: { label: string; status: string }) {
+const DottedLeader = function ({ label, status }: { label: string; status: string }) {
   return (
     <div className="flex justify-between gap-2 font-mono text-xs sm:text-sm">
-      <span className="text-white/40">{label}</span>
-      <span className="flex-1 border-b border-dotted border-white/10 translate-y-[-4px]" />
+      <span className="text-gray-400">{label}</span>
+      <span className="flex-1 border-b border-dotted border-gray-200 translate-y-[-4px]" />
       <span className="text-primary font-normal">{status}</span>
     </div>
   );
 }
 
-export function LandingPage() {
+export const LandingPage = function () {
   return (
-    <div className="dark relative min-h-screen bg-[oklch(0.08_0.01_240)] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+    <div className="relative min-h-screen bg-gray-50 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
       {/* Animated grid background */}
       <div
         className="animate-grid-scroll pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(0deg, transparent, transparent 39px, oklch(0.7 0.15 200) 39px, oklch(0.7 0.15 200) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, oklch(0.7 0.15 200) 39px, oklch(0.7 0.15 200) 40px)',
+            'repeating-linear-gradient(0deg, transparent, transparent 39px, oklch(0.52 0.15 210 / 15%) 39px, oklch(0.52 0.15 210 / 15%) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, oklch(0.52 0.15 210 / 15%) 39px, oklch(0.52 0.15 210 / 15%) 40px)',
         }}
       />
 
       {/* Main card */}
       <div
-        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-primary/10 bg-[oklch(0.1_0.01_240)]"
+        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-primary/10 bg-white"
         style={{
-          boxShadow: '0 0 40px oklch(0.7 0.15 200 / 8%), inset 0 1px 0 oklch(0.7 0.15 200 / 10%)',
+          boxShadow: '0 0 40px oklch(0.52 0.15 210 / 8%), inset 0 1px 0 oklch(0.52 0.15 210 / 6%)',
         }}>
         {/* Background image */}
         <div

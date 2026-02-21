@@ -291,7 +291,7 @@ export const Route = createFileRoute('/step-3/safety-checklist')({
       currentItemIndex >= 0 && currentItemIndex < items.length ? items[currentItemIndex].title : '';
 
     return (
-      <div className="flex h-screen w-full bg-[oklch(0.08_0.01_240)] overflow-hidden">
+      <div className="flex h-screen w-full bg-gray-50 overflow-hidden">
         {/* Hidden canvas for snapshot capture */}
         <canvas ref={canvasRef} className="hidden" />
 
@@ -306,7 +306,7 @@ export const Route = createFileRoute('/step-3/safety-checklist')({
         />
 
         {/* Divider */}
-        <div className="w-px bg-white/5" />
+        <div className="w-px bg-gray-200" />
 
         {/* Right: Safety panel */}
         <div className="flex-[2] overflow-y-auto">

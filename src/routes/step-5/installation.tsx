@@ -49,21 +49,21 @@ export const Route = createFileRoute('/step-5/installation')({
     };
 
     return (
-      <div className="flex h-screen w-full bg-[oklch(0.08_0.01_240)] overflow-hidden">
+      <div className="flex h-screen w-full bg-gray-50 overflow-hidden">
         {/* Left: AR camera view */}
         <ArCameraView currentStep={currentStep} completedSteps={completedSteps} />
 
         {/* Divider line */}
-        <div className="w-px bg-white/5" />
+        <div className="w-px bg-gray-200" />
 
         {/* Right: Tabbed panel */}
-        <div className="flex-[2] flex flex-col bg-[oklch(0.1_0.01_240)] overflow-hidden">
+        <div className="flex-[2] flex flex-col bg-white overflow-hidden">
           {/* Panel header */}
-          <div className="border-b border-white/5 px-5 py-3.5 flex items-center gap-2">
+          <div className="border-b border-gray-200 px-5 py-3.5 flex items-center gap-2">
             <Badge className="bg-primary/15 text-primary border-primary/30 font-mono text-[10px] tracking-wider">
               STEP {currentStep.number}/10
             </Badge>
-            <span className="text-sm text-white/70 font-normal truncate">{currentStep.title}</span>
+            <span className="text-sm text-gray-700 font-normal truncate">{currentStep.title}</span>
           </div>
 
           {/* Tabs */}
@@ -73,7 +73,7 @@ export const Route = createFileRoute('/step-5/installation')({
             className="flex-1 flex flex-col overflow-hidden gap-0">
             <TabsList
               variant="line"
-              className="w-full justify-start px-4 border-b border-white/5 h-10 rounded-none">
+              className="w-full justify-start px-4 border-b border-gray-200 h-10 rounded-none">
               <TabsTrigger value="steps" className="text-[12px] font-mono tracking-wider">
                 Steps
               </TabsTrigger>

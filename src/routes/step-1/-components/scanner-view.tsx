@@ -38,7 +38,7 @@ export const ScannerView = function () {
   }, []);
 
   return (
-    <div className="relative flex-[3] min-h-screen overflow-hidden bg-black">
+    <div className="relative flex-[3] min-h-screen overflow-hidden bg-gray-100">
       {/* Background camera feed */}
       <video
         ref={videoRef}
@@ -53,10 +53,10 @@ export const ScannerView = function () {
 
       {/* Top-right: System Online badge */}
       <div className="absolute top-6 right-6 z-30">
-        <div className="flex items-center gap-2 rounded-[5px] border border-blue-200/5 bg-[#171b22]/95 px-2.5 py-1 shadow-md backdrop-blur-md">
-          <div className="flex items-center gap-1.5 border-r border-[#30363d] pr-2.5">
+        <div className="flex items-center gap-2 rounded-[5px] border border-gray-200 bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-md">
+          <div className="flex items-center gap-1.5 border-r border-gray-200 pr-2.5">
             <span className="h-2 w-2 rounded-full bg-[#207e41]" />
-            <span className="text-[12px] leading-tight font-medium tracking-wide text-slate-200">
+            <span className="text-[12px] leading-tight font-medium tracking-wide text-gray-700">
               System Online
             </span>
           </div>
@@ -70,7 +70,7 @@ export const ScannerView = function () {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-slate-400">
+            className="text-gray-400">
             <path d="M5 12.55a11 11 0 0 1 14.08 0" />
             <path d="M1.42 9a16 16 0 0 1 21.16 0" />
             <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
@@ -135,23 +135,23 @@ export const ScannerView = function () {
       </div>
 
       {/* Bottom Section Island: Information and Actions */}
-      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 flex flex-col items-center gap-4 rounded-2xl border border-blue-200/5 bg-[#171b22]/95 p-4 shadow-2xl backdrop-blur-md">
+      <div className="absolute bottom-5 left-4 right-4 sm:left-8 sm:right-8 lg:left-12 lg:right-12 z-30 flex flex-col items-center gap-4 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-2xl backdrop-blur-md">
         {/* Status badges */}
         <div className="flex flex-wrap justify-center gap-2.5 w-full">
           {statusItems.map(function (item) {
             const isDone = item.done;
             const bgClass = isDone
-              ? 'bg-[#314a34]/80 border-[#396e3d]'
-              : 'bg-[#4a3f2b]/80 border-[#6a542f]';
-            const textClass = isDone ? 'text-white' : 'text-[#c7b483]';
-            const iconClass = isDone ? 'text-[#3ce06f]' : 'text-[#a28640]';
+              ? 'bg-green-100 border-green-300'
+              : 'bg-amber-100 border-amber-300';
+            const textClass = isDone ? 'text-gray-900' : 'text-amber-600';
+            const iconClass = isDone ? 'text-emerald-600' : 'text-amber-600';
 
             return (
               <div
                 key={item.label}
                 className={`flex items-center gap-2 rounded-full border px-3 py-1.5 shadow-sm transition-colors backdrop-blur-md ${bgClass}`}>
                 {isDone ? (
-                  <div className="flex items-center justify-center font-normal text-black bg-[#3ce06f] rounded-full h-[15px] w-[15px]">
+                  <div className="flex items-center justify-center font-normal text-white bg-emerald-500 rounded-full h-[15px] w-[15px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -186,12 +186,12 @@ export const ScannerView = function () {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-[#30363d]" />
+        <div className="w-full h-px bg-gray-200" />
 
         {/* Bottom text actions */}
         <div className="flex flex-col items-center gap-1">
-          <span className="text-white font-normal text-[13px] tracking-wide">Can't scan?</span>
-          <button className="text-[#8b949e] font-medium text-[12px] border-b border-[#30363d] pb-0.5 hover:text-white hover:border-[#8b949e] transition-colors">
+          <span className="text-gray-900 font-normal text-[13px] tracking-wide">Can't scan?</span>
+          <button className="text-gray-500 font-medium text-[12px] border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-400 transition-colors">
             Enter model number manually
           </button>
         </div>

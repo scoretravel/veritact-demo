@@ -38,7 +38,7 @@ export const InstallationStepsTab = function ({
                 className={cn(
                   'flex items-start gap-3 rounded-lg p-3 transition-colors cursor-pointer',
                   isCurrent && 'bg-primary/10 border border-primary/20',
-                  !isCurrent && 'hover:bg-white/5 border border-transparent'
+                  !isCurrent && 'hover:bg-gray-900/5 border border-transparent'
                 )}
                 onClick={function () {
                   onStepSelect(index);
@@ -47,9 +47,9 @@ export const InstallationStepsTab = function ({
                 <div
                   className={cn(
                     'shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[11px] font-semibold border mt-0.5',
-                    isCompleted && 'bg-[#3ce06f]/15 border-[#3ce06f]/30 text-[#3ce06f]',
+                    isCompleted && 'bg-emerald-100 border-emerald-300 text-emerald-600',
                     isCurrent && !isCompleted && 'bg-primary/15 border-primary/30 text-primary',
-                    !isCurrent && !isCompleted && 'bg-white/5 border-white/10 text-white/30'
+                    !isCurrent && !isCompleted && 'bg-gray-900/5 border-gray-200 text-gray-400'
                   )}>
                   {isCompleted ? (
                     <svg
@@ -72,21 +72,21 @@ export const InstallationStepsTab = function ({
                   <div
                     className={cn(
                       'text-sm font-normal',
-                      isCurrent && 'text-white',
-                      isCompleted && !isCurrent && 'text-white/60',
-                      !isCurrent && !isCompleted && 'text-white/40'
+                      isCurrent && 'text-gray-900',
+                      isCompleted && !isCurrent && 'text-gray-500',
+                      !isCurrent && !isCompleted && 'text-gray-400'
                     )}>
                     {step.title}
                   </div>
                   {isCurrent && (
                     <>
-                      <p className="text-[12px] text-white/40 mt-1 leading-relaxed">
+                      <p className="text-[12px] text-gray-400 mt-1 leading-relaxed">
                         {step.description}
                       </p>
                       <StepDetailContent step={step} onAskAi={onAskAi} />
                     </>
                   )}
-                  <span className="font-mono text-[10px] text-white/20 mt-1 block">
+                  <span className="font-mono text-[10px] text-gray-300 mt-1 block">
                     ~{step.estimatedMinutes} min
                   </span>
                 </div>
@@ -97,7 +97,7 @@ export const InstallationStepsTab = function ({
       </div>
 
       {/* Navigation buttons */}
-      <div className="border-t border-white/5 p-4 flex gap-2">
+      <div className="border-t border-gray-200 p-4 flex gap-2">
         <Button
           variant="outline"
           disabled={isFirstStep}
@@ -108,7 +108,7 @@ export const InstallationStepsTab = function ({
         <Button
           className="flex-1 h-9 text-sm font-normal cursor-pointer"
           style={{
-            boxShadow: '0 0 10px oklch(0.7 0.15 200 / 20%)',
+            boxShadow: '0 0 10px oklch(0.52 0.15 210 / 15%)',
           }}
           onClick={onNext}>
           {isLastStep ? 'Complete' : 'Next Step'} &rarr;

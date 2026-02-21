@@ -35,7 +35,7 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
   const allChecked = checkedCount === items.length;
 
   return (
-    <Card className="rounded-none border-0 bg-[oklch(0.1_0.01_240)] ring-0 shadow-none">
+    <Card className="rounded-none border-0 bg-white ring-0 shadow-none">
       <CardHeader className="gap-3">
         {/* Badges */}
         <div className="flex items-center gap-2">
@@ -44,16 +44,16 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
           </Badge>
           <Badge
             variant="outline"
-            className="border-white/10 text-white/60 font-mono text-[10px] tracking-wider">
+            className="border-gray-200 text-gray-500 font-mono text-[10px] tracking-wider">
             SHPM88Z75N
           </Badge>
         </div>
 
-        <CardTitle className="text-lg font-normal tracking-wide text-white">
+        <CardTitle className="text-lg font-normal tracking-wide text-gray-900">
           Safety Protocols
         </CardTitle>
 
-        <p className="text-white/40 text-sm">
+        <p className="text-gray-400 text-sm">
           Camera is automatically verifying each safety requirement.
         </p>
       </CardHeader>
@@ -62,7 +62,7 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
         {/* Progress */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <span className="font-mono text-[10px] tracking-widest text-white/50 uppercase">
+            <span className="font-mono text-[10px] tracking-widest text-gray-500 uppercase">
               Verification Progress
             </span>
             <span className="font-mono text-[10px] tracking-wider text-primary">
@@ -71,7 +71,7 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
           </div>
           <Progress
             value={progressValue}
-            className="[&_[data-slot=progress-track]]:h-1.5 [&_[data-slot=progress-track]]:bg-white/5"
+            className="[&_[data-slot=progress-track]]:h-1.5 [&_[data-slot=progress-track]]:bg-gray-200"
           />
         </div>
 
@@ -88,8 +88,8 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
                   isItemScanning
                     ? 'border-primary/40 bg-primary/5'
                     : item.checked
-                      ? 'border-[#3ce06f]/20 bg-[#3ce06f]/5'
-                      : 'border-white/5 bg-[oklch(0.08_0.01_240)]'
+                      ? 'border-emerald-200 bg-emerald-50'
+                      : 'border-gray-200 bg-gray-50'
                 }`}>
                 <Checkbox
                   checked={item.checked}
@@ -99,10 +99,10 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
                 <div
                   className={`shrink-0 mt-0.5 transition-colors duration-300 ${
                     item.checked
-                      ? 'text-[#3ce06f]'
+                      ? 'text-emerald-600'
                       : isItemScanning
                         ? 'text-primary'
-                        : 'text-white/30'
+                        : 'text-gray-400'
                   }`}>
                   {item.icon}
                 </div>
@@ -110,21 +110,21 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
                   <Label
                     className={`text-sm font-normal transition-colors duration-300 ${
                       item.checked
-                        ? 'text-white/80'
+                        ? 'text-gray-800'
                         : isItemScanning
-                          ? 'text-white/70'
-                          : 'text-white/60'
+                          ? 'text-gray-700'
+                          : 'text-gray-500'
                     }`}>
                     {item.title}
                   </Label>
-                  <p className="text-[13px] text-white/30 leading-relaxed">{item.description}</p>
+                  <p className="text-[13px] text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
                 {/* Thumbnail from snapshot */}
                 {item.snapshot && (
                   <img
                     src={item.snapshot}
                     alt={`${item.title} verification`}
-                    className="w-14 h-14 rounded-lg object-cover border border-[#3ce06f]/20 shrink-0"
+                    className="w-14 h-14 rounded-lg object-cover border border-emerald-200 shrink-0"
                   />
                 )}
               </div>
@@ -134,10 +134,10 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
 
         {/* Video Recording Attachment */}
         {recordingUrl && (
-          <div className="rounded-lg border border-[#3ce06f]/20 bg-[#3ce06f]/5 p-3 space-y-3">
+          <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-white/70">Verification Recording</span>
-              <div className="flex items-center gap-1.5 text-[#3ce06f]">
+              <span className="text-sm text-gray-700">Verification Recording</span>
+              <div className="flex items-center gap-1.5 text-emerald-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -155,14 +155,14 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
             <video
               src={recordingUrl}
               controls
-              className="w-full rounded-lg border border-white/10"
+              className="w-full rounded-lg border border-gray-200"
             />
-            <div className="flex items-center gap-2 text-white/40">
+            <div className="flex items-center gap-2 text-gray-400">
               <span className="font-mono text-[10px] tracking-wider">
                 Duration: {String(Math.floor(recordingDuration / 60)).padStart(2, '0')}:
                 {String(recordingDuration % 60).padStart(2, '0')}
               </span>
-              <span className="text-white/20">&middot;</span>
+              <span className="text-gray-300">&middot;</span>
               <span className="font-mono text-[10px] tracking-wider">Recorded just now</span>
             </div>
           </div>
@@ -177,7 +177,7 @@ export const SafetyPanel = function (props: SafetyPanelProps) {
               allChecked
                 ? {
                     boxShadow:
-                      '0 0 15px oklch(0.7 0.15 200 / 30%), 0 0 30px oklch(0.7 0.15 200 / 10%)',
+                      '0 0 15px oklch(0.52 0.15 210 / 20%), 0 0 30px oklch(0.52 0.15 210 / 8%)',
                   }
                 : undefined
             }

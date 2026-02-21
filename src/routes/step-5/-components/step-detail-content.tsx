@@ -12,28 +12,28 @@ export const StepDetailContent = function ({ step, onAskAi }: StepDetailContentP
   return (
     <div className="mt-3 space-y-3">
       {/* Detailed instruction */}
-      <p className="text-sm text-white/70 leading-relaxed">{step.detailedInstruction}</p>
+      <p className="text-sm text-gray-700 leading-relaxed">{step.detailedInstruction}</p>
 
       {/* Diagram placeholder */}
-      <div className="relative rounded-lg border border-white/5 bg-[oklch(0.08_0.01_240)] p-4">
-        <Badge className="absolute top-2 right-2 bg-white/10 text-white/50 border-white/10 font-mono text-[9px] tracking-widest">
+      <div className="relative rounded-lg border border-gray-200 bg-gray-50 p-4">
+        <Badge className="absolute top-2 right-2 bg-gray-900/10 text-gray-500 border-gray-200 font-mono text-[9px] tracking-widest">
           DIAGRAM
         </Badge>
         <div className="flex flex-col items-center gap-2 py-3">
-          <div className="w-12 h-12 rounded-md border border-white/10 bg-white/5 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-md border border-gray-200 bg-gray-900/5 flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="w-6 h-6 text-white/20">
+              className="w-6 h-6 text-gray-300">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
               <circle cx="8.5" cy="8.5" r="1.5" />
               <polyline points="21 15 16 10 5 21" />
             </svg>
           </div>
-          <span className="font-mono text-[10px] text-white/30 tracking-wider text-center">
+          <span className="font-mono text-[10px] text-gray-400 tracking-wider text-center">
             {step.diagramLabel}
           </span>
         </div>
@@ -41,7 +41,7 @@ export const StepDetailContent = function ({ step, onAskAi }: StepDetailContentP
 
       {/* Action buttons */}
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="sm" className="h-7 text-[12px] text-white/50 gap-1.5 px-2">
+        <Button variant="ghost" size="sm" className="h-7 text-[12px] text-gray-500 gap-1.5 px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

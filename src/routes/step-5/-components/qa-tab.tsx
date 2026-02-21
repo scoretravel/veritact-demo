@@ -52,8 +52,8 @@ export const QaTab = function ({ currentStepNumber }: QaTabProps) {
                 <div
                   className={`max-w-[85%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
                     isUser
-                      ? 'bg-primary/15 text-white/80 border border-primary/20'
-                      : 'bg-white/5 text-white/60 border border-white/5'
+                      ? 'bg-primary/10 text-gray-800 border border-primary/20'
+                      : 'bg-gray-50 text-gray-600 border border-gray-200'
                   }`}>
                   {msg.text}
                 </div>
@@ -65,7 +65,7 @@ export const QaTab = function ({ currentStepNumber }: QaTabProps) {
 
       {/* Quick question chips */}
       {chips.length > 0 && (
-        <div className="border-t border-white/5 px-4 py-2 flex flex-wrap gap-1.5">
+        <div className="border-t border-gray-200 px-4 py-2 flex flex-wrap gap-1.5">
           {chips.map(function (chip, i) {
             return (
               <button
@@ -82,12 +82,12 @@ export const QaTab = function ({ currentStepNumber }: QaTabProps) {
       )}
 
       {/* Input */}
-      <div className="border-t border-white/5 p-4 flex gap-2">
+      <div className="border-t border-gray-200 p-4 flex gap-2">
         <input
           type="text"
           value={input}
           placeholder="Ask a question..."
-          className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/30 outline-none focus:border-primary/30 transition-colors"
+          className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-primary/30 transition-colors"
           onChange={function (e) {
             setInput(e.target.value);
           }}

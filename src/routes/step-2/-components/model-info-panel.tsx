@@ -171,7 +171,7 @@ const SectionHeader = function ({
   return (
     <div className="flex items-center gap-2">
       {icon}
-      <span className="text-sm font-medium text-white/80">{title}</span>
+      <span className="text-sm font-medium text-gray-800">{title}</span>
       {trailing && <span className="ml-auto">{trailing}</span>}
     </div>
   );
@@ -180,19 +180,19 @@ const SectionHeader = function ({
 /** Right-side panel displaying detected model information and specifications. */
 export const ModelInfoPanel = function () {
   return (
-    <Card className="rounded-none border-0 bg-[oklch(0.1_0.01_240)] ring-0 shadow-none">
+    <Card className="rounded-none border-0 bg-white ring-0 shadow-none">
       <CardHeader className="gap-3">
         {/* Header — image placeholder + model info */}
         <div className="flex items-start gap-4">
           {/* Product image placeholder */}
-          <div className="w-16 h-16 shrink-0 rounded-lg border border-white/10 bg-[oklch(0.08_0.01_240)] flex items-center justify-center">
+          <div className="w-16 h-16 shrink-0 rounded-lg border border-gray-200 bg-gray-50 flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="w-7 h-7 text-white/20">
+              className="w-7 h-7 text-gray-300">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
               <circle cx="8.5" cy="8.5" r="1.5" />
               <polyline points="21 15 16 10 5 21" />
@@ -203,12 +203,12 @@ export const ModelInfoPanel = function () {
             <span className="font-mono text-[10px] tracking-widest text-primary uppercase block">
               DISHWASHER &middot; 800 Series
             </span>
-            <CardTitle className="text-lg font-normal tracking-wide text-white">
+            <CardTitle className="text-lg font-normal tracking-wide text-gray-900">
               Bosch 800 Series
             </CardTitle>
             <Badge
               variant="outline"
-              className="border-white/10 text-white/60 font-mono text-[10px] tracking-wider">
+              className="border-gray-200 text-gray-500 font-mono text-[10px] tracking-wider">
               Model: SHPM88Z75N
             </Badge>
           </div>
@@ -227,7 +227,7 @@ export const ModelInfoPanel = function () {
           </Button>
           <Button
             variant="outline"
-            className="h-9 gap-2 border-white/10 text-white/70 text-sm font-normal cursor-pointer"
+            className="h-9 gap-2 border-gray-200 text-gray-700 text-sm font-normal cursor-pointer"
             render={<a href="#" />}>
             <HeadsetIcon />
             Contact Support
@@ -240,7 +240,7 @@ export const ModelInfoPanel = function () {
             icon={<ClearanceIcon />}
             title="Clearance Requirements"
             trailing={
-              <span className="font-mono text-[10px] tracking-wider text-white/40 uppercase">
+              <span className="font-mono text-[10px] tracking-wider text-gray-400 uppercase">
                 Inches
               </span>
             }
@@ -250,11 +250,11 @@ export const ModelInfoPanel = function () {
               return (
                 <div
                   key={dim.label}
-                  className="rounded-lg border border-white/5 bg-[oklch(0.08_0.01_240)] p-3 text-center space-y-1">
-                  <span className="font-mono text-[10px] tracking-wider text-white/40 uppercase block">
+                  className="rounded-lg border border-gray-200 bg-gray-50 p-3 text-center space-y-1">
+                  <span className="font-mono text-[10px] tracking-wider text-gray-400 uppercase block">
                     {dim.label}
                   </span>
-                  <span className="text-lg font-bold font-mono text-white/90 block">
+                  <span className="text-lg font-bold font-mono text-gray-800 block">
                     {dim.value}
                   </span>
                 </div>
@@ -263,7 +263,7 @@ export const ModelInfoPanel = function () {
           </div>
           <div className="flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2.5">
             <CautionIcon />
-            <span className="text-xs text-amber-200/70 leading-relaxed">
+            <span className="text-xs text-amber-700 leading-relaxed">
               Allow 0.5" side clearance when installing near a corner wall to ensure the door opens
               fully.
             </span>
@@ -273,14 +273,14 @@ export const ModelInfoPanel = function () {
         {/* Electrical Specs */}
         <div className="space-y-3">
           <SectionHeader icon={<ElectricalIcon />} title="Electrical Specs" />
-          <div className="rounded-lg border border-white/5 overflow-hidden">
+          <div className="rounded-lg border border-gray-200 overflow-hidden">
             {electricalSpecs.map(function (spec, i) {
               return (
                 <div
                   key={spec.label}
-                  className={`flex items-center justify-between px-4 py-3 ${i < electricalSpecs.length - 1 ? 'border-b border-white/5' : ''}`}>
-                  <span className="text-sm text-white/50">{spec.label}</span>
-                  <span className="text-sm font-mono text-white/80">{spec.value}</span>
+                  className={`flex items-center justify-between px-4 py-3 ${i < electricalSpecs.length - 1 ? 'border-b border-gray-200' : ''}`}>
+                  <span className="text-sm text-gray-500">{spec.label}</span>
+                  <span className="text-sm font-mono text-gray-800">{spec.value}</span>
                 </div>
               );
             })}
@@ -290,14 +290,14 @@ export const ModelInfoPanel = function () {
         {/* Plumbing Specs */}
         <div className="space-y-3">
           <SectionHeader icon={<PlumbingIcon />} title="Plumbing Specs" />
-          <div className="rounded-lg border border-white/5 overflow-hidden">
+          <div className="rounded-lg border border-gray-200 overflow-hidden">
             {plumbingSpecs.map(function (spec, i) {
               return (
                 <div
                   key={spec.label}
-                  className={`flex items-center justify-between px-4 py-3 ${i < plumbingSpecs.length - 1 ? 'border-b border-white/5' : ''}`}>
-                  <span className="text-sm text-white/50">{spec.label}</span>
-                  <span className="text-sm font-mono text-white/80">{spec.value}</span>
+                  className={`flex items-center justify-between px-4 py-3 ${i < plumbingSpecs.length - 1 ? 'border-b border-gray-200' : ''}`}>
+                  <span className="text-sm text-gray-500">{spec.label}</span>
+                  <span className="text-sm font-mono text-gray-800">{spec.value}</span>
                 </div>
               );
             })}
@@ -307,11 +307,11 @@ export const ModelInfoPanel = function () {
         {/* Included Parts */}
         <div className="space-y-3">
           <SectionHeader icon={<PartsIcon />} title="Included Parts" />
-          <div className="rounded-lg border border-white/5 bg-[oklch(0.08_0.01_240)] px-4 py-3">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
             <ul className="space-y-2">
               {includedParts.map(function (part) {
                 return (
-                  <li key={part} className="flex items-center gap-2 text-sm text-white/60">
+                  <li key={part} className="flex items-center gap-2 text-sm text-gray-500">
                     <span className="h-1 w-1 rounded-full bg-primary/60 shrink-0" />
                     {part}
                   </li>
@@ -326,7 +326,7 @@ export const ModelInfoPanel = function () {
           <Button
             className="h-11 w-full gap-2 rounded-lg text-sm font-normal cursor-pointer"
             style={{
-              boxShadow: '0 0 15px oklch(0.7 0.15 200 / 30%), 0 0 30px oklch(0.7 0.15 200 / 10%)',
+              boxShadow: '0 0 15px oklch(0.52 0.15 210 / 20%), 0 0 30px oklch(0.52 0.15 210 / 8%)',
             }}
             render={<Link to="/step-3/safety-checklist" />}>
             Continue to Safety Check

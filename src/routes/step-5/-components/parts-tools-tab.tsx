@@ -26,7 +26,7 @@ export const PartsToolsTab = function () {
                 'font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md border transition-colors cursor-pointer',
                 activeCategory === cat
                   ? 'bg-primary/15 border-primary/30 text-primary'
-                  : 'bg-transparent border-white/10 text-white/40 hover:text-white/60 hover:border-white/20'
+                  : 'bg-transparent border-gray-200 text-gray-400 hover:text-gray-500 hover:border-gray-300'
               )}
               onClick={function () {
                 setActiveCategory(cat);
@@ -44,17 +44,17 @@ export const PartsToolsTab = function () {
             return (
               <div
                 key={part.id}
-                className="rounded-lg border border-white/5 bg-[oklch(0.08_0.01_240)] p-3 space-y-2">
+                className="rounded-lg border border-gray-200 bg-gray-50 p-3 space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-sm text-white/70">{part.name}</span>
+                  <span className="text-sm text-gray-700">{part.name}</span>
                   <Badge
                     variant="outline"
-                    className="border-white/10 text-white/40 font-mono text-[9px] tracking-wider shrink-0">
+                    className="border-gray-200 text-gray-400 font-mono text-[9px] tracking-wider shrink-0">
                     ×{part.quantity}
                   </Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-white/30">{part.partNumber}</span>
+                  <span className="font-mono text-[10px] text-gray-400">{part.partNumber}</span>
                   <span
                     className={cn(
                       'font-mono text-[9px] tracking-wider uppercase px-1.5 py-0.5 rounded border',
