@@ -1,4 +1,4 @@
-import { PlayIcon } from '@hugeicons/core-free-icons';
+import { CircleArrowRightIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Button } from '@/components/ui/button';
 
@@ -14,7 +14,7 @@ function DottedLeader({ label, status }: { label: string; status: string }) {
     <div className="flex justify-between gap-2 font-mono text-xs sm:text-sm">
       <span className="text-white/40">{label}</span>
       <span className="flex-1 border-b border-dotted border-white/10 translate-y-[-4px]" />
-      <span className="text-cyan-400 font-semibold">{status}</span>
+      <span className="text-primary font-semibold">{status}</span>
     </div>
   );
 }
@@ -42,7 +42,7 @@ export function LandingPage() {
 
       {/* Main card */}
       <div
-        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-cyan-500/10 bg-[oklch(0.1_0.01_240)]"
+        className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl border border-primary/10 bg-[oklch(0.1_0.01_240)]"
         style={{
           boxShadow: '0 0 40px oklch(0.7 0.15 200 / 8%), inset 0 1px 0 oklch(0.7 0.15 200 / 10%)',
         }}>
@@ -61,24 +61,19 @@ export function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.1_0.01_240)] via-transparent to-[oklch(0.1_0.01_240/60%)]" />
 
         {/* HUD corner brackets */}
-        <div className="absolute top-3 left-3 h-6 w-6 border-t-2 border-l-2 border-cyan-400/30" />
-        <div className="absolute top-3 right-3 h-6 w-6 border-t-2 border-r-2 border-cyan-400/30" />
-        <div className="absolute bottom-3 left-3 h-6 w-6 border-b-2 border-l-2 border-cyan-400/30" />
-        <div className="absolute bottom-3 right-3 h-6 w-6 border-b-2 border-r-2 border-cyan-400/30" />
+        <div className="absolute top-3 left-3 h-6 w-6 border-t-2 border-l-2 border-primary/30" />
+        <div className="absolute top-3 right-3 h-6 w-6 border-t-2 border-r-2 border-primary/30" />
+        <div className="absolute bottom-3 left-3 h-6 w-6 border-b-2 border-l-2 border-primary/30" />
+        <div className="absolute bottom-3 right-3 h-6 w-6 border-b-2 border-r-2 border-primary/30" />
 
         {/* Content */}
         <div className="relative z-10 px-8 py-12 sm:px-10 sm:py-14 md:px-16 md:py-20 max-w-2xl">
-          {/* System ID bar */}
-          <div className="animate-fade-in-up mb-6 font-mono text-[10px] sm:text-xs tracking-widest text-white/25 uppercase">
-            SYS:VT-2400 &nbsp;// &nbsp;v2.4.1
-          </div>
-
           {/* Status badge */}
           <div
-            className="animate-fade-in-up mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1"
+            className="animate-fade-in-up mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1"
             style={{ animationDelay: '0.1s' }}>
-            <span className="size-2 rounded-full bg-cyan-400 animate-pulse-glow" />
-            <span className="text-xs font-semibold tracking-wider text-cyan-400 uppercase">
+            <span className="size-2 rounded-full bg-primary animate-pulse-glow" />
+            <span className="text-xs font-semibold tracking-wider text-primary uppercase">
               System Online
             </span>
           </div>
@@ -102,7 +97,7 @@ export function LandingPage() {
 
           {/* System readout panel */}
           <div
-            className="animate-fade-in-up mt-8 rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4 space-y-2.5"
+            className="animate-fade-in-up mt-8 rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2.5"
             style={{ animationDelay: '0.45s' }}>
             {systemStatus.map(({ label, status }) => (
               <DottedLeader key={label} label={label} status={status} />
@@ -115,12 +110,12 @@ export function LandingPage() {
             style={{ animationDelay: '0.6s' }}>
             <Button
               size="lg"
-              className="h-14 gap-3 rounded-xl px-7 text-base font-bold bg-cyan-500 text-black hover:bg-cyan-400 cursor-pointer"
+              className="h-14 gap-3 rounded-xl px-7 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/85 cursor-pointer"
               style={{
                 boxShadow: '0 0 20px oklch(0.7 0.15 200 / 40%), 0 0 40px oklch(0.7 0.15 200 / 15%)',
               }}>
-              <HugeiconsIcon icon={PlayIcon} size={20} />
               Begin Installation
+              <HugeiconsIcon icon={CircleArrowRightIcon} size={20} strokeWidth={3} />
             </Button>
           </div>
 
@@ -128,7 +123,7 @@ export function LandingPage() {
           <div
             className="animate-fade-in-up mt-10 font-mono text-[10px] tracking-widest text-white/20 uppercase"
             style={{ animationDelay: '0.75s' }}>
-            v2.4.1 &nbsp;// &nbsp;Veritact Systems
+            v0.0.3 &nbsp;// &nbsp;Veritact Systems
           </div>
         </div>
       </div>
