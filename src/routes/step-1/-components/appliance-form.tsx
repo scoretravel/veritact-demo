@@ -1,5 +1,6 @@
 import { BarcodeScanIcon, Search01Icon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -23,7 +24,7 @@ export const ApplianceForm = function () {
   return (
     <Card className="h-full rounded-none border-0 bg-[oklch(0.1_0.01_240)] ring-0 shadow-none">
       <CardHeader className="gap-2">
-        <CardTitle className="text-lg font-bold tracking-wide text-white">
+        <CardTitle className="text-lg font-normal tracking-wide text-white">
           Identify Appliance
         </CardTitle>
         <CardDescription className="text-white/40 text-sm">
@@ -109,10 +110,11 @@ export const ApplianceForm = function () {
         {/* Actions */}
         <div className="space-y-3 pt-2">
           <Button
-            className="h-11 w-full gap-2 rounded-lg text-sm font-bold cursor-pointer"
+            className="h-11 w-full gap-2 rounded-lg text-sm font-normal cursor-pointer"
             style={{
               boxShadow: '0 0 15px oklch(0.7 0.15 200 / 30%), 0 0 30px oklch(0.7 0.15 200 / 10%)',
-            }}>
+            }}
+            render={<Link to="/step-2/model-details" />}>
             Confirm Model
             <span className="text-primary-foreground/70">&rarr;</span>
           </Button>

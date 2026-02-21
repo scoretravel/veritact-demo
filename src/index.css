@@ -121,7 +121,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply font-sans bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground;
   }
   html {
     @apply font-sans;
@@ -129,15 +129,6 @@
 }
 
 /* Futuristic HUD animations */
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(calc(100vh));
-  }
-}
-
 @keyframes pulse-glow {
   0%,
   100% {
@@ -168,10 +159,6 @@
   }
 }
 
-.animate-scan {
-  animation: scan 4s linear infinite;
-}
-
 .animate-pulse-glow {
   animation: pulse-glow 2.5s ease-in-out infinite;
 }
@@ -198,4 +185,50 @@
 
 .animate-bracket-pulse {
   animation: bracket-pulse 2s ease-in-out infinite;
+}
+
+@keyframes checkmark-draw {
+  0% {
+    stroke-dashoffset: 30;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-checkmark-draw {
+  stroke-dasharray: 30;
+  animation: checkmark-draw 0.8s ease-out 0.3s both;
+}
+
+@keyframes progress-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress-width, 100%);
+  }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 0.6s ease-out both;
+}
+
+@keyframes recording-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-recording-pulse {
+  animation: recording-pulse 1.2s ease-in-out infinite;
 }
