@@ -1,0 +1,3 @@
+# Run prettier check & eslint
+pnpm run format:check
+pnpm run lint

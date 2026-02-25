@@ -1,0 +1,174 @@
+{
+  // Privacy settings
+  "telemetry.enableCrashReporter": false,
+  "telemetry.feedback.enabled": false,
+  "redhat.telemetry.enabled": false,
+
+  // General for all languages
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+
+  // Editor
+  "editor.bracketPairColorization.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+
+  // Terminal
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.suggest.enabled": true,
+
+  // Search
+  "search.exclude": {
+    "**/service-interface": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.svelte-kit": true
+  },
+
+  // File associations
+  "files.associations": {
+    "*.json": "jsonc",
+    ".env": "shellscript",
+    ".env.*": "shellscript",
+    ".npmrc": "shellscript",
+    ".*ignore": "shellscript",
+    "pre-commit": "shellscript",
+    "*.liquid": "markdown",
+    "*.sql": "sql",
+    "*.hcl": "hcl",
+    "atlas.hcl": "atlas-config"
+  },
+
+  // Spellings
+  "cSpell.words": [
+    "fastify",
+    "typesense",
+    "testcontainers",
+    "typegen",
+    "openapi",
+    "upserted",
+    "datalake",
+    "whisperx",
+    "safeql",
+    "buildx",
+    "rclone",
+    "dotenv",
+    "stringbool",
+    "savepoint",
+    // Vendors
+    "scoretravel",
+    "launchunit",
+    "hotelbeds",
+    "rapidapi",
+    "inngest",
+    "vercel",
+    "koyeb",
+    "attio",
+    // Python
+    "venv",
+    "virtualenvs",
+    "pipx",
+    "pyproject",
+    "uvicorn",
+    "paddleocr"
+  ],
+
+  // TOML files
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.allowedBlankLines": 1,
+  "evenBetterToml.schema.links": true,
+
+  // TypeScript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.referencesCodeLens.enabled": true,
+
+  // Python
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.languageServer": "Pylance",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.typeCheckingMode": "standard",
+
+  // Ruff format and linter
+  // https://github.com/astral-sh/ruff-vscode
+  "ruff.configuration": "${workspaceFolder}/pyproject.toml",
+  "ruff.configurationPreference": "filesystemFirst",
+
+  // Formatters
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[html][css][javascript][typescript][tsx][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+    "editor.formatOnSave": true
+  },
+  "[yaml][dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[shellscript][ignore]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[terraform][terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[sql]": {
+    "editor.tabSize": 2,
+    // There is no good formatter for SQL
+    "editor.formatOnSave": false
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      // Only sort imports, not remove unused imports
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "never"
+    }
+  },
+
+  // Jupyter Notebooks
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    // Only sort imports, not remove unused imports
+    "notebook.source.organizeImports.ruff": "explicit",
+    "notebook.source.fixAll.ruff": "never"
+  },
+  // Jupyter Notebooks UI
+  "notebook.insertFinalNewline": false,
+  "notebook.globalToolbar": true,
+  "notebook.lineNumbers": "on",
+  "notebook.cellFocusIndicator": "gutter",
+  "notebook.showCellStatusBar": "visible",
+  "notebook.showFoldingControls": "always",
+  "notebook.diff.enablePreview": true,
+  "notebook.dragAndDropEnabled": true,
+  "notebook.cellToolbarVisibility": "hover",
+  "notebook.stickyScroll.enabled": true,
+  "notebook.diff.overviewRuler": true,
+  "notebook.formatOnCellExecution": true,
+  "notebook.cellExecutionTimeVerbosity": "verbose",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "right"
+  }
+}

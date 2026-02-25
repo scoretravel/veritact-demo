@@ -1,7 +1,16 @@
 {
   "$schema": "https://btca.dev/btca.schema.json",
   "dataDirectory": ".btca",
+  "model": "anthropic/claude-haiku-4.5",
+  "provider": "openrouter",
   "resources": [
+    {
+      "type": "git",
+      "name": "scoretravel",
+      "url": "https://github.com/scoretravel/node-tools",
+      "branch": "main",
+      "searchPaths": ["packages"],
+    },
     {
       "type": "git",
       "name": "zod",
@@ -114,6 +123,4 @@
       "searchPaths": ["content"],
     },
   ],
-  "model": "anthropic/claude-haiku-4.5",
-  "provider": "openrouter",
 }
